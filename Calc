@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package Com.soft.code;
+
+import java.util.Scanner;
+
+/**
+ * @author jashu
+ *
+ */
+public class Calculator {
+
+	/**
+	 * @param args
+	 * @return
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter First Number :");
+		int no1 = sc.nextInt();
+		System.out.println("Enter Second Number :");
+		int no2 = sc.nextInt();
+		System.out.println("Enter [+,-,*,/] :");
+		char operator = sc.next().charAt(0);
+		int result = calculate(no1, no2, operator);
+		System.out.println(no1+" "+operator+" "+no2+"="+result);
+		
+
+		sc.close();
+	}
+
+	static int calculate(int num1, int num2, char operator) {
+		int result = 0;
+		switch (operator) {
+		case '+':
+			result = num1 + num2;
+			break;
+		case '-':
+			result = num1 - num2;
+			break;
+		case '*':
+			result = num1 * num2;
+			break;
+		case '/':
+			result = num1 / num2;
+			break;
+
+		}
+		return result;
+
+	}
+
+}
