@@ -17,4 +17,4 @@ class Table
 	 }
  }
 }
-//now taking table from keyboard
+now taking table from keyboard
