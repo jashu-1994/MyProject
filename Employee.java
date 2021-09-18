@@ -1,4 +1,4 @@
-package Com.Soft;
+package com.softech.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,11 +15,11 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "EMPLOYEE_ID")
 	private int ID;
-	
+
 	@Column(name = "NAME")
 	private String name;
-	
-    @Column(name = "GENDER")
+
+	@Column(name = "GENDER")
 	private String gander;
 
 	@Column(name = "ADDRESS")
@@ -30,21 +30,16 @@ public class Employee {
 
 	@Column(name = "SALARY")
 	private int salary;
-	
-	
 
-	public Employee( String name, String gander, String address, String city, int salary) {
-		super();
-		
-		this.name = name;
-		this.gander = gander;
-		this.address = address;
-		this.city = city;
-		this.salary = salary;
-	}
+	
 
 	public int getID() {
 		return ID;
+	}
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public void setID(int iD) {
