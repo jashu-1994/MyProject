@@ -1,25 +1,24 @@
-package Com.Soft;
+package com.springcore;
 
-import org.hibernate.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class App {
-
-	public static void main(String[] args) {
-
-		Transaction tx = null;
-
-		try {
-			SessionFactory sf = HibernateUtil.getSessionFactory();
-			Session s = sf.openSession();
-			tx = s.beginTransaction();
-			Employee employee = new Employee("Ramesh Kumar", "Male", "Karnattaka", "Bengaluru", 1000);
-			s.save(employee);
-			tx.commit();
-			s.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    ApplicationContext context= new ClassPathXmlApplicationContext("com/springcore/config.xml");
+    student student1 =(student) context.getBean("student1");
+    student student2 =(student) context.getBean("student1");
+    student student3 =(student) context.getBean("student1");
+    student student4 =(student) context.getBean("student1");
+    System.out.println(student1.hashCode());
+    System.out.println(student2.hashCode());
+    System.out.println(student3.hashCode());
+    System.out.println(student4.hashCode());
+    }
 }
